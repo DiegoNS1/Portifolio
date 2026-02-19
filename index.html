@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Diego Naves | A Forja do Código</title>
+  <meta name="description" content="Portfólio estilo medieval imersivo — a forja do código." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <!-- Fontes (medieval + legível) -->
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Uncial+Antiqua&family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Canvas de brasas -->
+  <canvas id="embers" aria-hidden="true"></canvas>
+
+  <!-- INTRO / PORTÃO -->
+  <div class="intro" id="intro" role="dialog" aria-modal="true" aria-label="Entrada da Forja">
+    <div class="gate gate-left"></div>
+    <div class="gate gate-right"></div>
+
+    <div class="intro-center">
+      <div class="sigil" aria-hidden="true">⚒️</div>
+      <h1 class="intro-title">A Forja do Código</h1>
+      <p class="intro-sub">
+        Onde ideias brutas viram soluções digitais.
+      </p>
+
+      <div class="intro-actions">
+        <button class="btn btn-primary" id="enterBtn">
+          Entrar na Forja
+        </button>
+        <button class="btn btn-ghost" id="soundBtn" aria-pressed="false">
+          Som: Desligado
+        </button>
+      </div>
+
+      <p class="intro-hint">Dica: aperte <kbd>Enter</kbd> para entrar.</p>
+    </div>
+  </div>
+
+  <!-- HEADER -->
+  <header class="topbar">
+    <a class="brand" href="#forja">Diego Naves</a>
+    <nav class="nav">
+      <a href="#forja">Forja</a>
+      <a href="#arsenal">Arsenal</a>
+      <a href="#ferramentas">Ferramentas</a>
+      <a href="#juramento">Juramento</a>
+      <a href="#contato">Contratar</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <main id="forja" class="section hero">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <p class="eyebrow">Ferreiro Digital • Programador</p>
+        <h2 class="hero-title">
+          Eu forjo <span class="ember">sites</span>, <span class="ember">sistemas</span> e <span class="ember">landing pages</span>
+          com performance e presença.
+        </h2>
+        <p class="hero-text">
+          Da matéria-prima (ideia) ao aço (produto), entrego experiências modernas com um toque medieval imersivo.
+        </p>
+
+        <div class="hero-cta">
+          <a class="btn btn-primary" href="#arsenal">Ver Arsenal</a>
+          <a class="btn btn-ghost" href="#contato">Pedir Orçamento</a>
+        </div>
+
+        <div class="runes">
+          <span class="rune">⚙️ Front-end</span>
+          <span class="rune">🧱 Back-end</span>
+          <span class="rune">🛡️ UI/UX</span>
+          <span class="rune">🔥 Performance</span>
+        </div>
+      </div>
+
+      <div class="hero-card" aria-label="Painel da Forja">
+        <div class="card-head">
+          <span class="chip">Status da Forja</span>
+          <span class="heat" id="heatText">Calor: 72%</span>
+        </div>
+        <div class="anvil" aria-hidden="true">
+          <div class="anvil-top"></div>
+          <div class="anvil-body"></div>
+          <div class="sparkline" id="sparkline"></div>
+        </div>
+        <p class="card-foot">
+          Clique em qualquer lugar da página para gerar faíscas ✨
+        </p>
+      </div>
+    </div>
+  </main>
+
+  <!-- PROJETOS -->
+  <section id="arsenal" class="section">
+    <h3 class="section-title">Arsenal</h3>
+    <p class="section-sub">Projetos forjados (troque pelos seus reais).</p>
+
+    <div class="cards">
+      <article class="card">
+        <h4>Espada I — Landing de Conversão</h4>
+        <p>Landing rápida, responsiva, com foco em captação de leads.</p>
+        <div class="card-actions">
+          <a class="link" href="#" target="_blank" rel="noreferrer">Ver Demo</a>
+          <a class="link" href="#" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <h4>Martelo II — Site Institucional</h4>
+        <p>Site moderno com identidade visual forte e SEO básico.</p>
+        <div class="card-actions">
+          <a class="link" href="#" target="_blank" rel="noreferrer">Ver Demo</a>
+          <a class="link" href="#" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+      </article>
+
+      <article class="card">
+        <h4>Escudo III — Painel/Admin</h4>
+        <p>Dashboard com componentes reutilizáveis e navegação clara.</p>
+        <div class="card-actions">
+          <a class="link" href="#" target="_blank" rel="noreferrer">Ver Demo</a>
+          <a class="link" href="#" target="_blank" rel="noreferrer">GitHub</a>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- HABILIDADES -->
+  <section id="ferramentas" class="section">
+    <h3 class="section-title">Ferramentas</h3>
+    <p class="section-sub">O que eu uso na bancada.</p>
+
+    <div class="skills">
+      <div class="skill">
+        <div class="skill-top">
+          <span>HTML/CSS</span><span>90</span>
+        </div>
+        <div class="bar"><div class="fill" style="width:90%"></div></div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-top">
+          <span>JavaScript</span><span>85</span>
+        </div>
+        <div class="bar"><div class="fill" style="width:85%"></div></div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-top">
+          <span>React</span><span>80</span>
+        </div>
+        <div class="bar"><div class="fill" style="width:80%"></div></div>
+      </div>
+
+      <div class="skill">
+        <div class="skill-top">
+          <span>Node/Back-end</span><span>70</span>
+        </div>
+        <div class="bar"><div class="fill" style="width:70%"></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="juramento" class="section">
+    <h3 class="section-title">Juramento do Ferreiro</h3>
+    <p class="section-sub">
+      Meu compromisso: entregar com qualidade, clareza e velocidade.
+    </p>
+
+    <div class="oath">
+      <div class="oath-item">
+        <h4>⚒️ Qualidade</h4>
+        <p>Código limpo, manutenção simples, boas práticas.</p>
+      </div>
+      <div class="oath-item">
+        <h4>🛡️ Confiabilidade</h4>
+        <p>Entrega consistente e comunicação objetiva.</p>
+      </div>
+      <div class="oath-item">
+        <h4>🔥 Performance</h4>
+        <p>Carregamento rápido e experiência fluida.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTATO -->
+  <footer id="contato" class="section footer">
+    <h3 class="section-title">Contratar o Ferreiro</h3>
+    <p class="section-sub">Bora forjar seu projeto?</p>
+
+    <div class="contact">
+      <a class="btn btn-primary" href="https://wa.me/5511954546062" target="_blank" rel="noreferrer">
+        WhatsApp
+      </a>
+      <a class="btn btn-ghost" href="mailto:seuemail@email.com">Email</a>
+      <a class="btn btn-ghost" href="#" target="_blank" rel="noreferrer">LinkedIn</a>
+      <a class="btn btn-ghost" href="#" target="_blank" rel="noreferrer">GitHub</a>
+    </div>
+
+    <p class="fineprint">© <span id="year"></span> Diego Naves — A Forja do Código.</p>
+  </footer>
+
+  <!-- Áudio opcional (coloque um arquivo seu em /assets/forge.mp3) -->
+  <audio id="forgeAudio" loop preload="none">
+    <source src="assets/forge.mp3" type="audio/mpeg" />
+  </audio>
+
+  <script src="scrips.js"></script>
+</body>
+</html>
